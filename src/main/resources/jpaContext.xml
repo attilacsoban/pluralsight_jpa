@@ -36,7 +36,13 @@
 		</property>
 	</bean>
 
-	<bean></bean>
+	<!-- entitymanagerfactory-t var al, hogy adjunk neki =>  transactionmanagert csak elerhetove teszi szamunkra-->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
+	</bean>
+	
+	<!-- to configure transactions ve need one more row -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 </beans>
  
