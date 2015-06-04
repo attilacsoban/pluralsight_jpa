@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pluralsight.model.Goal;
+import com.pluralsight.model.GoalReport;
 import com.pluralsight.repository.GoalDao;
 
 @Service("goalService")
@@ -32,6 +33,10 @@ public class GoalServiceImpl implements GoalService {
 	public List<Goal> findAll() {
 		return goalDao.findAll();
 		
+	}
+
+	public List<GoalReport> findAllGoalReports() {
+		return goalDao.findAllGoalReports();
 	}
 
 }

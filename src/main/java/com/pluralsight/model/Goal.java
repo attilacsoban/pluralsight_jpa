@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,11 +18,18 @@ import org.hibernate.validator.constraints.Range;
 
 @Entity // alap entity annotaciot hasznaljuk, ha cserelni szeretnem a providert, ne kelljen ezt is modositani
 @Table(name=Goal.TABLE_NAME)
+@NamedQueries({
+	@NamedQuery(name = Goal.FIND_GOAL_REPORTS,query = "select new com.pluralsight.model.GoalReport(g.minutes,e.minutes,e.activity) "
+				+ "from Goal g, Exercise e where g.id = e.goal.id"),
+				@NamedQuery(name = Goal.FIND_ALL_GOALS, query = "select g from Goal g")
+})
 public class Goal {
 
 	public final static String TABLE_NAME = "goals";
 	public final static String FIELD_MINUTES = "MINUTES";
 	public final static String FIELD_ID = "GOAL_ID";
+	public final static String FIND_GOAL_REPORTS = "findGoalReports";
+	public final static String FIND_ALL_GOALS = "findAllGoals";
 	
 	@Id
 	@GeneratedValue
