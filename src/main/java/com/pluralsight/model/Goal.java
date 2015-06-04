@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -30,7 +31,13 @@ public class Goal {
 	@Column(name = Goal.FIELD_MINUTES)
 	private int minutes;
 	
-	@OneToMany(mappedBy = "goal",cascade = CascadeType.ALL)
+	/* lazy initialization exception gyakori hiba kelll csinalni valamit,
+	 * openentitymanagerviewfiler calss kell web.xml-be implementalunk megakadalyozza h 
+	 * bezarja a sessiont a req-resp ciklusban kitolja a jpa session idejet, h visszaerjen a respons adat
+	 * ha lazy fetchet hasznalok
+	 * filtert kell alkalmazni ennyi a web.xml ben
+	 *  */
+	@OneToMany(mappedBy = "goal",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Exercise> exercises = new ArrayList<Exercise>();
 	
 	

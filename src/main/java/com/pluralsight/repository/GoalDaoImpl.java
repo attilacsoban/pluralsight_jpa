@@ -1,7 +1,10 @@
 package com.pluralsight.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +24,12 @@ public class GoalDaoImpl implements GoalDao {
 		em.flush();
 		
 		return goal;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Goal> findAll() {
+		Query q = em.createQuery("select g from Goal g");
+		return q.getResultList();
 	}
 
 }
