@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.pluralsight.model.Goal;
 
-@Repository("goalDAOImpl")
-public class GoalDAOImpl implements GoalDAO {
+@Repository("goalDao")
+public class GoalDaoImpl implements GoalDao {
 
 	@PersistenceContext
 	private EntityManager em;
