@@ -9,6 +9,7 @@
 	
 	<!-- CSA tells spring i want to figure rest of my application throuhógh annotations -->
 	<context:annotation-config />
+	<context:component-scan base-package="com.pluralsight" />
 	
 	<!-- CSA tells spring to use the persistence context annotatio -->
 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"></bean>
@@ -37,12 +38,13 @@
 	</bean>
 
 	<!-- entitymanagerfactory-t var al, hogy adjunk neki =>  transactionmanagert csak elerhetove teszi szamunkra-->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">		
 		<property name="entityManagerFactory" ref="entityManagerFactory" /> <!-- wrap the transactions around this property -->
+<!-- 		<property name="dataSource" ref="dataSource"></property> -->
 	</bean>
 	
-	<!-- to configure transactions ve need one more row  mi definialjuk a tranzakciokat annotaciokkal @Transaction-->
-	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<!-- to configure transactions we need one more row  mi definialjuk a tranzakciokat annotaciokkal @Transaction-->
+	<tx:annotation-driven transaction-manager="transactionManager"  /> <!--  -->
 	
 	<!-- dataSource bean -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
