@@ -41,7 +41,7 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
 	</bean>
 	
-	<!-- to configure transactions ve need one more row -->
+	<!-- to configure transactions ve need one more row  mi definialjuk a tranzakciokat annotaciokkal @Transaction-->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

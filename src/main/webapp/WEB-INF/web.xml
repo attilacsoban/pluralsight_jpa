@@ -8,7 +8,7 @@
 		<param-value>classpath:/jpaContext.xml</param-value>
 	</context-param>
 	
-	<!--  container triggereli, az osztályt, majd ez keres i meg a contextConfigLocaton-t -->
+	<!--  container triggereli, az osztályt, majd ez keres i meg a contextConfigLocation-t -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
