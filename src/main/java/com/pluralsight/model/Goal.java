@@ -59,7 +59,7 @@ public class Goal {
 		this.exercises = exercises;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -67,7 +67,7 @@ public class Goal {
 		return minutes;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

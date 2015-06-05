@@ -21,10 +21,12 @@ public class GoalDaoImpl implements GoalDao {
 	
 	@Transactional
 	public Goal save(Goal goal) {
-		System.out.println("bbbbbbbbbbbbbbbbbbbbbbb");
-		em.persist(goal);
-		em.flush();
-		
+		if(goal.getId() == null){
+			em.persist(goal);
+			em.flush();
+		}else{
+			goal = em.merge(goal);
+		}		
 		return goal;
 	}
 
