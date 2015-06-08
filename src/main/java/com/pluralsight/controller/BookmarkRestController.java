@@ -41,5 +41,17 @@ public class BookmarkRestController {
 		return null;
 	}
 	
+	@RequestMapping(value = "/{bookmarkId}", method = RequestMethod.GET)
+	@ResponseBody
+	Bookmark readBookmark(@PathVariable String userName, @PathVariable Long bookmarkId){
+		try {
+			this.validateUser(userName);
+			return this.bookmarkDao.findOne(bookmarkId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 }
