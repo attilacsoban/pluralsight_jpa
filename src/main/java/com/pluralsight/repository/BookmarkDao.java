@@ -12,7 +12,7 @@ import com.pluralsight.bookmarks.Bookmark;
 @Repository("bookmarkDao")
 public interface BookmarkDao extends JpaRepository<Bookmark, Long> {
 
-	//@Query(value = "select b form Bookmark b where b.account.username = :userName")
-	Collection<Bookmark> findByAccountUserName(/*@Param("userName")*/ String userName);
+	//  CSA @Query(value = "select b form Bookmark b where b.account.username = :userName")   @Param("userName")
+	Collection<Bookmark> findByAccountUserName(String userName);
 	
 }
