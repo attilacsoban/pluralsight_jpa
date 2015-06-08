@@ -8,7 +8,9 @@
 <body ng-app="myApp">
 
 <div ng-controller="myController">
-
+	<input type="text" ng-model="input1">
+	<h1>{{input1}}</h1>
+	<h1 ng-bind="name"></h1>
 </div>
 aaa
 

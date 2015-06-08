@@ -10,7 +10,7 @@ public class AngularController {
 
 	@RequestMapping(value = "/angular",method = RequestMethod.GET)
 	public String getAngularPage(Model model){
-		return "angular.html";
+		return "angular";
 	}
 	
 }
