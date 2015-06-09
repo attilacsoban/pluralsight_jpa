@@ -106,7 +106,26 @@ validation
 </div>
 
 
+<br>
+<a href="#addStudent">add student</a>
+<br>
+<a href="#viewStudents">view students</a>
+<div ng-view></div>
+<script type="text/ng-template" id="addStudent.htm">
+"<h2>add student</h2>"+
+{{message}}
+</script>
+
+<script type="text/ng-template" id="viewStudents.htm">
+"<h2>view student</h2>"+
+{{message}}
+</script>
+
+
+
+
 <script src='<spring:url value="assets/js/mainApp.js" />' type="text/javascript"></script>
+<script src='<spring:url value="assets/js/config.js" />' type="text/javascript"></script>
 <script src='<spring:url value="assets/js/studentController.js" />' type="text/javascript"></script>
 <script src='<spring:url value="assets/js/myController.js" />' type="text/javascript"></script>
 <script src='<spring:url value="assets/js/controller2.js" />' type="text/javascript"></script>
