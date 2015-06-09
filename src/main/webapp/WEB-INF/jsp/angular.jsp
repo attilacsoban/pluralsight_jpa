@@ -4,10 +4,6 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
-<!-- CSA -->
-<!-- <script src="http://localhost:8080/FitnessTracker/assets/js/studentController.js" type="text/javascript"></script> -->
-<!-- <script src="http://localhost:8080/FitnessTracker/assets/js/mainApp.js" type="text/javascript"></script> -->
-
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
@@ -72,11 +68,50 @@ show
 disabled
 <br>
 <button type="submit" ng-disabled="check">adada</button>
+<br>
+
+<div ng-controller="events">
+reset data with ng-click practice
+<input name="firstname" ng-model="firstName" type="text" ><br>
+<input name="lastname" ng-model="lastName" type="text" ><br>
+<input name="email" ng-model="email" type="text" ><br>
+<button ng-click="reset()">reset inputs to def</button>
+</div>
+<br>
+validation
+<div ng-controller="validation">
+	<form action="" name="form1" novalidate="novalidate">
+		<table>
+			<tr>
+				<td>firstname:</td>
+				<td>
+					<input type="text" ng-model="firstName" name="firstname" required="required">
+					<span style="color:red" ng-show="form1.firstname.$dirty && form1.firstname.$invalid">
+						<span ng-show="form1.firstname.$error.required">name required</span>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>{{'dirty?: =>  ' + form1.firstname.$dirty}}</td>
+			</tr>
+			<tr>
+				<td>a</td>
+				<td>a</td>
+			</tr>
+		</table>
+		
+	</form>
+	
+</div>
+
 
 <script src='<spring:url value="assets/js/mainApp.js" />' type="text/javascript"></script>
 <script src='<spring:url value="assets/js/studentController.js" />' type="text/javascript"></script>
 <script src='<spring:url value="assets/js/myController.js" />' type="text/javascript"></script>
 <script src='<spring:url value="assets/js/controller2.js" />' type="text/javascript"></script>
+<script src='<spring:url value="assets/js/events.js" />' type="text/javascript"></script>
+<script src='<spring:url value="assets/js/validation.js" />' type="text/javascript"></script>
 
 </body>
 </html>
