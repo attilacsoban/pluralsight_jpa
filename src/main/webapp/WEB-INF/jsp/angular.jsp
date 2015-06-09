@@ -1,18 +1,22 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+<!-- CSA -->
+<!-- <script src="http://localhost:8080/FitnessTracker/assets/js/studentController.js" type="text/javascript"></script> -->
+<!-- <script src="http://localhost:8080/FitnessTracker/assets/js/mainApp.js" type="text/javascript"></script> -->
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
 	table, td, tr,th{
-		border: 1px solid red
-		
+		border: 1px solid red		
 	}
 	
 </style>
-<script type="text/javascript" src="assets/js/mainApp.js" /></script>
-<script type="text/javascript" src="assets/js/studentController.js" ></script>
+
 </head>
 <body ng-app="myApp">
 
@@ -69,48 +73,10 @@ disabled
 <br>
 <button type="submit" ng-disabled="check">adada</button>
 
-
-
-
-
-
-<script type="text/javascript">
-var app = angular.module("myApp",[]);
-
-app.controller("myController", function($scope) {
-	$scope.name = "Attila";
-});
-
-
-app.controller("controller2", function($scope) {
-	$scope.student = {
-			firstName: "attila",
-			lastName: "csoban",
-			fullName: function(){
-				var obj;
-				obj = $scope.student;
-				return obj.firstName + " " + obj.lastName;
-			}			
-	};
-});
-app.controller("studentController", function($scope) {
-	$scope.student =  {
-			firstName: "Attila",
-			lastName: "Csoban",
-			fees: 500,
-			subjects: [
-			           {name:"math",mark:70},
-			           {name:"phisysics",mark:80},
-			           {name:"chemistry",mark:90}
-			           ],
-			fullName: function(){
-				var obj = $scope.student;
-				return  obj.lastName + " " + obj.firstName;
-			}			
-	};
-});
-
-</script>
+<script src='<spring:url value="assets/js/mainApp.js" />' type="text/javascript"></script>
+<script src='<spring:url value="assets/js/studentController.js" />' type="text/javascript"></script>
+<script src='<spring:url value="assets/js/myController.js" />' type="text/javascript"></script>
+<script src='<spring:url value="assets/js/controller2.js" />' type="text/javascript"></script>
 
 </body>
 </html>

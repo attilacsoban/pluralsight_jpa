@@ -34,6 +34,7 @@
     
 	<script type="text/javascript" src="jquery-1.8.3.js"></script>
 
+
 	<script type="text/javascript">
 		$(document).ready(
 			function() {
@@ -122,6 +123,7 @@
 
     <script src="assets/js/bootstrap.js">
     </script>
+  
   </body>
 </html>
 
