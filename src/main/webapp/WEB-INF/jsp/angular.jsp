@@ -11,7 +11,8 @@
 	}
 	
 </style>
-
+<script type="text/javascript" src="assets/js/mainApp.js" /></script>
+<script type="text/javascript" src="assets/js/studentController.js" ></script>
 </head>
 <body ng-app="myApp">
 
@@ -59,12 +60,14 @@ Students table
 	</table>
 </div>
 
-
+show
 <br>
 <input type="checkbox" ng-model="check">
 <button type="submit" ng-show="check">adada</button>
-
-
+<br>
+disabled
+<br>
+<button type="submit" ng-disabled="check">adada</button>
 
 
 
@@ -72,8 +75,8 @@ Students table
 
 
 <script type="text/javascript">
-
 var app = angular.module("myApp",[]);
+
 app.controller("myController", function($scope) {
 	$scope.name = "Attila";
 });
@@ -90,7 +93,6 @@ app.controller("controller2", function($scope) {
 			}			
 	};
 });
-
 app.controller("studentController", function($scope) {
 	$scope.student =  {
 			firstName: "Attila",
