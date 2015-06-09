@@ -26,7 +26,8 @@
 						<constructor-arg>
 							<map>						
 								<entry key="json" value="application/json" />
-								<entry key="xml" value="application/xml" />								
+								<entry key="xml" value="application/xml" />	
+								 <entry key="html" value="text/html"/>							
 							</map>
 						</constructor-arg>
 					</bean>
@@ -63,20 +64,5 @@
 	 p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" p:order="2"/>
 	 	
 	 <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 <!-- proba mert nem egy a transaction -->
-	 
-<!-- 	 <bean name="goalService" class="com.pluralsight.service.GoalServiceImpl"> -->
-<!-- 	 	<property name="goalDao" ref="goalDao"></property> -->
-<!-- 	 </bean> -->
-	 
-<!-- 	 <bean name="goalDao" class="com.pluralsight.repository.GoalDaoImpl"></bean> -->
 
 </beans>
